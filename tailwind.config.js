@@ -17,4 +17,18 @@ export default {
     },
   },
   plugins: [],
+  safelist: [
+    // Border radius classes
+    'rounded-none',
+    'rounded-sm', 
+    'rounded',
+    'rounded-md',
+    'rounded-lg',
+    'rounded-xl',
+    'rounded-2xl',
+    'rounded-3xl',
+    'rounded-full',
+    // Other dynamic classes that might be missed
+    'rounded-r-lg',
+  ],
 } 

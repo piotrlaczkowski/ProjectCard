@@ -60,7 +60,7 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(({ projec
             )}
 
             <div 
-                className={`w-full flex flex-col transition-all duration-300 ease-in-out ${shadowClass} bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 overflow-hidden hover:-translate-y-1 ${radiusClass}`}
+                className={`w-full flex flex-col transition-all duration-300 ease-in-out ${shadowClass} bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 hover:-translate-y-1 ${radiusClass} overflow-hidden`}
                 style={{ minHeight: `${cardHeight}rem` }}
             >
                 {/* Image Banner */}
