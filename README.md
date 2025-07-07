@@ -41,6 +41,9 @@ npm run build
 ### Access Your Deployed App
 
 After deployment, your app will be available at:
-`https://[your-username].github.io/Project%20Card%20Generator/`
+`https://[your-username].github.io/ProjectCard/`
 
 Replace `[your-username]` with your actual GitHub username.
+
+For this repository, it will be:
+`https://piotrlaczkowski.github.io/ProjectCard/`
