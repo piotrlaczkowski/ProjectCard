@@ -7,6 +7,37 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+/* Enhanced Glow Effects */
+.shadow-blue-500\/70 {
+  --tw-shadow-color: rgb(59 130 246 / 0.7);
+  --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-purple-500\/70 {
+  --tw-shadow-color: rgb(168 85 247 / 0.7);
+  --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-green-500\/70 {
+  --tw-shadow-color: rgb(34 197 94 / 0.7);
+  --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-red-500\/70 {
+  --tw-shadow-color: rgb(239 68 68 / 0.7);
+  --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-amber-400\/70 {
+  --tw-shadow-color: rgb(251 191 36 / 0.7);
+  --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 /* Simple scrollbar styling for a consistent look */
 ::-webkit-scrollbar {
   width: 8px;
@@ -32,4 +63,175 @@ body {
 
 .animate-notification {
   animation: fade-in-out 3s ease-in-out forwards;
+}
+
+/* Custom Range Slider Styling */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: 3px solid #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  border-color: #2563eb;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+}
+
+.slider::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+}
+
+.slider::-webkit-slider-track {
+  background: transparent;
+  height: 8px;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: 3px solid #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.slider::-moz-range-thumb:hover {
+  border-color: #2563eb;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+}
+
+.slider::-moz-range-track {
+  background: transparent;
+  height: 8px;
+}
+
+/* Dark mode slider styling */
+.dark .slider::-webkit-slider-thumb {
+  background: #1e293b;
+  border-color: #3b82f6;
+}
+
+.dark .slider::-moz-range-thumb {
+  background: #1e293b;
+  border-color: #3b82f6;
+}
+
+/* Focus ring for better accessibility */
+.slider:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Custom Toggle Animation */
+.toggle-switch {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced Card Hover Effects */
+.card-hover {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* Smooth Color Transitions */
+.color-transition {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Focus States */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Gradient Button Hover Effects */
+.gradient-button {
+  background-size: 200% 200%;
+  transition: all 0.3s ease;
+}
+
+.gradient-button:hover {
+  background-position: right center;
+}
+
+/* Enhanced Animation for Collapsible Sections */
+.collapsible-content {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Status Button Hover Effects */
+.status-button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.status-button:hover {
+  transform: translateY(-1px);
+}
+
+/* Enhanced Status Indicator Animations */
+.status-indicator {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.status-indicator:hover {
+  transform: scale(1.05);
+}
+
+/* Backdrop blur support */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+/* Ring animations for selected status */
+@keyframes ring-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+.ring-pulse {
+  animation: ring-pulse 2s infinite;
+}
+
+/* Color Picker Preset Hover */
+.color-preset {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.color-preset:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Loading State Animation */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.loading-pulse {
+  animation: pulse-subtle 1.5s ease-in-out infinite;
 } 

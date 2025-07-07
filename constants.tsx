@@ -2,6 +2,21 @@ import React from 'react';
 import type { ProjectData } from './types.ts';
 import { LinkType, ShadowStyle, MeteoStatus } from './types.ts';
 
+// Cross-browser UUID generation function
+export const generateUUID = (): string => {
+    // Try to use crypto.randomUUID if available
+    if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+        return crypto.randomUUID();
+    }
+    
+    // Fallback to manual UUID v4 generation
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        const r = Math.random() * 16 | 0;
+        const v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+};
+
 export const SHADOW_CLASSES: Record<ShadowStyle, string> = {
   [ShadowStyle.NONE]: 'shadow-none',
   [ShadowStyle.SM]: 'shadow-sm',
@@ -9,11 +24,11 @@ export const SHADOW_CLASSES: Record<ShadowStyle, string> = {
   [ShadowStyle.LG]: 'shadow-lg',
   [ShadowStyle.XL]: 'shadow-xl',
   [ShadowStyle.INNER]: 'shadow-inner',
-  [ShadowStyle.GLOW_BLUE]: 'shadow-2xl shadow-blue-500/50',
-  [ShadowStyle.GLOW_PURPLE]: 'shadow-2xl shadow-purple-500/50',
-  [ShadowStyle.GLOW_GREEN]: 'shadow-2xl shadow-green-500/50',
-  [ShadowStyle.GLOW_RED]: 'shadow-2xl shadow-red-500/50',
-  [ShadowStyle.GLOW_GOLD]: 'shadow-2xl shadow-amber-500/50',
+  [ShadowStyle.GLOW_BLUE]: 'shadow-2xl shadow-blue-500/70 drop-shadow-2xl',
+  [ShadowStyle.GLOW_PURPLE]: 'shadow-2xl shadow-purple-500/70 drop-shadow-2xl',
+  [ShadowStyle.GLOW_GREEN]: 'shadow-2xl shadow-green-500/70 drop-shadow-2xl',
+  [ShadowStyle.GLOW_RED]: 'shadow-2xl shadow-red-500/70 drop-shadow-2xl',
+  [ShadowStyle.GLOW_GOLD]: 'shadow-2xl shadow-amber-400/70 drop-shadow-2xl',
 };
 
 export const FONTS = {
@@ -74,13 +89,13 @@ export const LINK_ICONS: Record<LinkType, React.ReactNode> = {
 };
 
 export const createNewProject = (): ProjectData => ({
-    id: crypto.randomUUID(),
+    id: generateUUID(),
     name: 'New Awesome Project',
     tag: 'PoC',
     description: 'A brief and exciting description of what this project aims to achieve. This section can grow to talk about goals, milestones, and expected outcomes.',
     progress: 25,
     warnings: '',
-    links: [{id: crypto.randomUUID(), type: LinkType.GitHub, url: ''}],
+    links: [{id: generateUUID(), type: LinkType.GitHub, url: ''}],
     progressBarColor: { type: 'solid', color1: '#3b82f6' },
     tagColor: { type: 'solid', color1: '#8b5cf6' },
     shadowStyle: ShadowStyle.LG,

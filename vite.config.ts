@@ -8,6 +8,18 @@ export default defineConfig(({ mode }) => {
     return {
       // Set base path for GitHub Pages deployment  
       base: isProduction ? '/ProjectCard/' : '/',
+      server: {
+        host: true,
+        port: 5173,
+        strictPort: false,
+        open: true,
+        cors: true,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Cache-Control'
+        }
+      },
       css: {
         postcss: './postcss.config.js',
       },

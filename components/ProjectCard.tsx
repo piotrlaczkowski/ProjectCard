@@ -12,8 +12,10 @@ const MeteoIndicator: React.FC<{ status: MeteoStatus }> = ({ status }) => {
     if (!meteo) return null;
 
     return (
-        <div className={`flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-semibold ${meteo.bgColor}`}>
-            <span className={meteo.color}>{meteo.icon}</span>
+        <div className={`flex items-center gap-2.5 px-4 py-2.5 rounded-full text-sm font-semibold shadow-sm border border-white/20 backdrop-blur-sm ${meteo.bgColor}`}>
+            <div className={`w-4 h-4 ${meteo.color}`}>
+                {meteo.icon}
+            </div>
             <span className={meteo.color}>{meteo.label}</span>
         </div>
     );
